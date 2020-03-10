@@ -8,6 +8,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "live-server": "^1.2.1",
+    "monk": "^7.1.2",
     "morgan": "^1.9.1"
   },
   "devDependencies": {

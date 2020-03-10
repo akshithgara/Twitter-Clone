@@ -20,6 +20,8 @@ form.addEventListener('submit', (event)=> {
     headers: {
       'content-type': 'application/json'
     }
+  }).then(response => response.json()).then(createdTweet => {
+    console.log(createdTweet);
   })
-  
+
 });
