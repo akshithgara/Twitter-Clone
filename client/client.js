@@ -1,6 +1,8 @@
 console.log("hello world")
 
 const form = document.querySelector('form');
+const API_URL = "http://localhost:5000/tweet"
+
 
 form.addEventListener('submit', (event)=> {
   event.preventDefault();
@@ -12,5 +14,12 @@ form.addEventListener('submit', (event)=> {
     name,
     tweet
   };
-  console.log(finalTweet);
+  fetch(API_URL, {
+    method: 'POST',
+    body: JSON.stringify(finalTweet),
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
+  
 });
