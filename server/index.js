@@ -9,11 +9,19 @@ const tweets = db.get('tweets');
 
 app.use(cors());
 app.use(express.json());
+
 app.get('/', (req,res) => {
   res.json({
     message: 'Tweet response!'
   })
 });
+
+app.get('/tweets', (req,res) => {
+  tweets.find().then(tweets => {
+    res.json(tweets);
+  })
+})
+
 
 function isValidTweet(tweet) {
   if (tweet.name && tweet.name.toString().trim() != ''
@@ -27,7 +35,7 @@ function isValidTweet(tweet) {
 
 
 
-app.post('/tweet', (req,res)=> {
+app.post('/tweets', (req,res)=> {
     if (isValidTweet(req.body)) {
       const tweet = {
         name: req.body.name.toString(),
