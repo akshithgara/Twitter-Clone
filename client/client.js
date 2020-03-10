@@ -4,6 +4,7 @@ const form = document.querySelector('form');
 const tweetElement = document.querySelector('.tweets');
 const API_URL = "http://localhost:5000/tweets"
 
+
 showTweets();
 form.addEventListener('submit', (event)=> {
   event.preventDefault();
@@ -22,17 +23,18 @@ form.addEventListener('submit', (event)=> {
       'content-type': 'application/json'
     }
   }).then(response => response.json()).then(createdTweet => {
-    console.log(createdTweet);
     form.reset();
+    showTweets();
   })
 });
 
 
 function showTweets(){
+  tweetElement.innerHTML = '';
   fetch(API_URL)
   .then(response => response.json())
   .then(tweets => {
-    console.log(tweets);
+    tweets.reverse();
     tweets.forEach(tweet => {
       const div = document.createElement('div');
 
