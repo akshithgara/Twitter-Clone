@@ -2,7 +2,8 @@
 
 This is a Twitter Clone Web Application built using JavaScript, Node.js, Express.js, HTML, CSS.
 
-Here's a short demo:
+## Demo
+
 ![](demo.gif)
 
 ## Getting Started
