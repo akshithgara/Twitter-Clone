@@ -1,4 +1,4 @@
-# Project Title
+# Twitter Clone
 
 This is a Twitter Clone Web Application built using JavaScript, Node.js, Express.js, HTML, CSS.
 
